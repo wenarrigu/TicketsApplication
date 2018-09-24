@@ -1,0 +1,84 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+<div class="row">
+
+    <h1>Tickets Manager</h1>
+
+</div>
+<div id="filters" class="row">
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-12">
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-12">
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Search</legend>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Ticket Number :
+                            <input type="text" class="form-control" id="search-ticket-number" />
+                        </div>
+                        <div class="col-md-3">
+                            Category :
+                            <select id="search-category" class="form-control">
+                                <option>Systems</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            Status :
+                            <select id="search-status" class="form-control">
+                                <option>Open</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            &nbsp;
+                            <input type="button" class="btn" value="Search" style="margin-top : 20px;">
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 70px;">
+
+            <div class="col-md-12">
+
+                <table id="tickets" class="display nowrap dataTable dtr-inline collapsed" style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th>Ticket Number</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Category</th>
+                            <th>Creation Date</th>
+                            <th>Last Update Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Test</td>
+                            <td>Pending</td>
+                            <td>Systems</td>
+                            <td>2018-09-20 20:07</td>
+                            <td>2018-09-21 20:07</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
