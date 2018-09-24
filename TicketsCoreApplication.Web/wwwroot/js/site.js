@@ -29,12 +29,27 @@ $(document).ready(function () {
     });
 
     $("#search").on("click", function () {
-        var filteredTickets = tickets.filter(function (ticket) {
-            if ($("#search-ticket-number").val() !== '')
-                return ticket.ticketNumber == $("#search-ticket-number").val() && ticket.status.code == $("#search-status").val() && ticket.category.code == $("#search-category").val()
-            else
-                return  ticket.status.code == $("#search-status").val() && ticket.category.code == $("#search-category").val()
-        });
+
+        var filteredTickets = tickets;
+
+        if ($("#search-ticket-number").val() !== '') {
+            filteredTickets = filteredTickets.filter(function (ticket) {
+                return ticket.ticketNumber == $("#search-ticket-number").val()            
+            });
+        }
+
+        if ($("#search-status").val() !== '-1') {
+            filteredTickets = filteredTickets.filter(function (ticket) {
+                return ticket.status.code == $("#search-status").val() 
+            });
+          
+        }
+
+        if ($("#search-category").val() !== '-1') {
+            filteredTickets = filteredTickets.filter(function (ticket) {
+                return ticket.category.code == $("#search-category").val()
+            });
+        }
 
         fillDataTable(filteredTickets);
 
